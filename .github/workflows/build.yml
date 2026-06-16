@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: microsoft/setup-msbuild@v2
+
+    - uses: nuget/setup-nuget@v2
+
+    - run: nuget restore FreemanSaveEditor.sln
+
+    - run: msbuild FreemanSaveEditor.sln /p:Configuration=Release
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: FreemanSaveEditor
+        path: '**/bin/Release/*'
