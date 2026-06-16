@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{927D8E81-07BF-46AC-AA76-86CC5D6AF8FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FreemanSaveEditor</RootNamespace>
+    <AssemblyName>FreemanSaveEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>editor.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FreeMan\Clothes.cs" />
+    <Compile Include="FreeMan\DesignChart.cs" />
+    <Compile Include="FreeMan\HeroAgent.cs" />
+    <Compile Include="FreeMan\Localization.cs" />
+    <Compile Include="FreeMan\Soldier.cs" />
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FreeMan\Items.cs" />
+    <Compile Include="FreeMan\MapAgent.cs" />
+    <Compile Include="frmEquipSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEquipSelection.Designer.cs">
+      <DependentUpon>frmEquipSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreeMan\ObjectShredder.cs" />
+    <Compile Include="frmMainEquipmentEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultiple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultiple.Designer.cs">
+      <DependentUpon>frmMultiple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryRow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FreeMan\Weapons.cs" />
+    <Compile Include="SortableBindingList.cs" />
+    <EmbeddedResource Include="frmEquipSelection.resx">
+      <DependentUpon>frmEquipSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMultiple.resx">
+      <DependentUpon>frmMultiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GOOGLES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HELMET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ARMOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOTHES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PISTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PISTOL_ACC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PANTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MISC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WEP_ACC1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WEP_ACC2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WEP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WEP2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="editor.ico" />
+    <Content Include="Resources\editor.ico" />
+    <Content Include="Resources\editorIco.png" />
+    <Content Include="Resources\Icon.png" />
+    <Content Include="Resources\ModBG.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
